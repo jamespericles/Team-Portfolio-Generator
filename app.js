@@ -7,7 +7,30 @@ const fs = require("fs");
 
 const writeFileAsync = util.promisify(fs.writeFile);
 
-async function promptInternData() {}
+async function promptInternData() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "name",
+            message: "What is the name of the intern?",
+        },
+        {
+            type: "input",
+            name: "ID",
+            message: "What is the ID of the intern?",
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "What is the email of the intern?",
+        },
+        {
+            type: "input",
+            name: "school",
+            message: "What school did the intern graduate from?",
+        },
+    ])
+}
 
 async function promptEmployeeType() {
     const employeeType

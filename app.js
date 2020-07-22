@@ -50,9 +50,31 @@ async function promptEngineerData() {
             message: "What is the engineer's email?",
         },
         {
-            type: "",
-            name: "",
+            type: "input",
+            name: "github",
             message: "What is the engineer's github URL?",
+        },
+    ])
+}
+
+async function promptManagerData() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "name",
+            message: "What is the name of the manager?",
+        },{
+            type: "input",
+            name: "ID",
+            message: "What is the manager's ID?",
+        },{
+            type: "input",
+            name: "email",
+            message: "What is the manager's email?",
+        },{
+            type: "input",
+            name: "officeNumber",
+            message: "What is the manager's office number?",
         },
     ])
 }

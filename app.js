@@ -9,102 +9,111 @@ const writeFileAsync = util.promisify(fs.writeFile);
 
 // Array of questions related to an intern
 async function promptInternData() {
-    await inquirer.prompt([
-        {
-            type: "input",
-            name: "name",
-            message: "What is the intern's name?",
-        },
-        {
-            type: "input",
-            name: "ID",
-            message: "What is the intern's ID?",
-        },
-        {
-            type: "input",
-            name: "email",
-            message: "What is the intern's email?",
-        },
-        {
-            type: "input",
-            name: "school",
-            message: "What school did the intern graduate from?",
-        },
-    ])
+  await inquirer.prompt([
+    {
+      type: "input",
+      name: "name",
+      message: "What is the intern's name?",
+    },
+    {
+      type: "input",
+      name: "ID",
+      message: "What is the intern's ID?",
+    },
+    {
+      type: "input",
+      name: "email",
+      message: "What is the intern's email?",
+    },
+    {
+      type: "input",
+      name: "school",
+      message: "What school did the intern graduate from?",
+    },
+  ]);
 }
 
 // Array of questions related to an engineer
 async function promptEngineerData() {
-    await inquirer.prompt([
-        {
-            type: "input",
-            name: "name",
-            message: "What is the name of the engineer?",
-        },
-        {
-            type: "input",
-            name: "ID",
-            message: "What is the engineer's ID?",
-        },
-        {
-            type: "input",
-            name: "email",
-            message: "What is the engineer's email?",
-        },
-        {
-            type: "input",
-            name: "github",
-            message: "What is the engineer's github URL?",
-        },
-    ])
+  await inquirer.prompt([
+    {
+      type: "input",
+      name: "name",
+      message: "What is the name of the engineer?",
+    },
+    {
+      type: "input",
+      name: "ID",
+      message: "What is the engineer's ID?",
+    },
+    {
+      type: "input",
+      name: "email",
+      message: "What is the engineer's email?",
+    },
+    {
+      type: "input",
+      name: "github",
+      message: "What is the engineer's github URL?",
+    },
+  ]);
 }
 
 // Array of questions related to a manager
 async function promptManagerData() {
-    await inquirer.prompt([
-        {
-            type: "input",
-            name: "name",
-            message: "What is the name of the manager?",
-        },{
-            type: "input",
-            name: "ID",
-            message: "What is the manager's ID?",
-        },{
-            type: "input",
-            name: "email",
-            message: "What is the manager's email?",
-        },{
-            type: "input",
-            name: "officeNumber",
-            message: "What is the manager's office number?",
-        },
-    ])
+  await inquirer.prompt([
+    {
+      type: "input",
+      name: "name",
+      message: "What is the name of the manager?",
+    },
+    {
+      type: "input",
+      name: "ID",
+      message: "What is the manager's ID?",
+    },
+    {
+      type: "input",
+      name: "email",
+      message: "What is the manager's email?",
+    },
+    {
+      type: "input",
+      name: "officeNumber",
+      message: "What is the manager's office number?",
+    },
+  ]);
 }
 
-// First question to determine what branch to follow 
+// First question to determine what branch to follow
 async function promptEmployeeType() {
-    let employeeType
-  
-    await inquirer.prompt([
+  let employeeType;
+
+  await inquirer
+    .prompt([
       {
         type: "list",
         name: "employeeType",
         message: "What type of employee would you like to add?",
         choices: ["Intern", "Engineer", "Manager"],
       },
-    ]).then((answer) => {
+    ])
+    .then((answer) => {
       employeeType = answer.employeeType;
     });
-  
-    return employeeType;
-  }
-  
-  const employeeType = await promptEmployeeType()
-  const employeeData;
-  if (employeeType === "Intern") {employeeData = promptInternData()}
-else if (employeeType === "Engineer") {employeeData = promptEngineerData()} 
-else if (employeeType === "Manager") {employeeData = promptManagerData()}
+
+  return employeeType;
+}
+
+let employeeType = promptEmployeeType();
+let employeeData;
+if (employeeType === "Intern") {
+  employeeData = promptInternData();
+} else if (employeeType === "Engineer") {
+  employeeData = promptEngineerData();
+} else if (employeeType === "Manager") {
+  employeeData = promptManagerData();
+}
 
 function generateHTML(answers) {}
 

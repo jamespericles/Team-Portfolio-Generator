@@ -9,7 +9,7 @@ const writeFileAsync = util.promisify(fs.writeFile);
 
 // Array of questions related to an intern
 async function promptInternData() {
-    inquirer.prompt([
+    await inquirer.prompt([
         {
             type: "input",
             name: "name",
@@ -35,7 +35,7 @@ async function promptInternData() {
 
 // Array of questions related to an engineer
 async function promptEngineerData() {
-    inquirer.prompt([
+    await inquirer.prompt([
         {
             type: "input",
             name: "name",
@@ -61,7 +61,7 @@ async function promptEngineerData() {
 
 // Array of questions related to a manager
 async function promptManagerData() {
-    inquirer.prompt([
+    await inquirer.prompt([
         {
             type: "input",
             name: "name",
@@ -84,9 +84,9 @@ async function promptManagerData() {
 
 // First question to determine what branch to follow 
 async function promptEmployeeType() {
-    const employeeType
+    let employeeType
   
-    inquirer.prompt([
+    await inquirer.prompt([
       {
         type: "list",
         name: "employeeType",
@@ -102,15 +102,15 @@ async function promptEmployeeType() {
   
   const employeeType = await promptEmployeeType()
   const employeeData;
-  if (employeeType === "Intern") {employeeData = await promptInternData()}
-else if (employeeType === "Engineer") {employeeData = await promptEngineerData()} 
-else if (employeeType === "Manager") {employeeData = await promptManagerData()}
+  if (employeeType === "Intern") {employeeData = promptInternData()}
+else if (employeeType === "Engineer") {employeeData = promptEngineerData()} 
+else if (employeeType === "Manager") {employeeData = promptManagerData()}
 
 function generateHTML(answers) {}
 
 async function init() {
   try {
-    const answers = await promptUser();
+    const answers = promptUser();
 
     const HTML = generateHTML(answers);
     // Rather than writing to the root of the file and overwriting this projects README, user's documents are written to their own folder

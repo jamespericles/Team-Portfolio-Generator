@@ -118,25 +118,25 @@ if (employeeType === "Intern") {
 
 function generateHTML(answers) {}
 
-async function init() {
-  try {
-    const answers = promptUser();
+// async function init() {
+//   try {
+//     const answers = promptUser();
 
-    const HTML = generateHTML(answers);
-    // Rather than writing to the root of the file and overwriting this projects README, user's documents are written to their own folder
-    await writeFileAsync("./output/team.html", HTML);
+//     const HTML = generateHTML(answers);
+//     // Rather than writing to the root of the file and overwriting this projects README, user's documents are written to their own folder
+//     await writeFileAsync("./output/team.html", HTML);
 
-    console.log("Successfully wrote to README.md.");
-  } catch (err) {
-    console.log(err);
-  }
-}
-const OUTPUT_DIR = path.resolve(__dirname, "output");
-const outputPath = path.join(OUTPUT_DIR, "team.html");
+//     console.log("Successfully wrote to README.md.");
+//   } catch (err) {
+//     console.log(err);
+//   }
+// }
+// const OUTPUT_DIR = path.resolve(__dirname, "output");
+// const outputPath = path.join(OUTPUT_DIR, "team.html");
 
-const render = require("./lib/htmlRenderer");
+// const render = require("./lib/htmlRenderer");
 
-init();
+// init();
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)

@@ -8,7 +8,14 @@ const fs = require("fs");
 const writeFileAsync = util.promisify(fs.writeFile);
 
 function promptUser() {
-  return inquirer.prompt([{ type: "", name: "", message: "" }]);
+  return inquirer.prompt([
+    {
+      type: "list",
+      name: "employeeType",
+      message: "What type of employee would you like to add?",
+      choices: ["Intern", "Engineer", "Manager"],
+    },
+  ]);
 }
 
 function generateHTML(answers) {}
@@ -30,6 +37,8 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
+
+init();
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)

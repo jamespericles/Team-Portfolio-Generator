@@ -5,6 +5,27 @@ const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
 
+const writeFileAsync = util.promisify(fs.writeFile);
+
+function promptUser() {
+  return inquirer.prompt([{ type: "", name: "", message: "" }]);
+}
+
+function generateHTML(answers) {}
+
+async function init() {
+  try {
+    const answers = await promptUser();
+
+    const HTML = generateHTML(answers);
+    // Rather than writing to the root of the file and overwriting this projects README, user's documents are written to their own folder
+    await writeFileAsync("./output/team.html", HTML);
+
+    console.log("Successfully wrote to README.md.");
+  } catch (err) {
+    console.log(err);
+  }
+}
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 

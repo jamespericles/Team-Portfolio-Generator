@@ -7,16 +7,30 @@ const fs = require("fs");
 
 const writeFileAsync = util.promisify(fs.writeFile);
 
-function promptUser() {
-  return inquirer.prompt([
-    {
-      type: "list",
-      name: "employeeType",
-      message: "What type of employee would you like to add?",
-      choices: ["Intern", "Engineer", "Manager"],
-    },
-  ]);
-}
+async function promptInternData() {}
+
+async function promptEmployeeType() {
+    const employeeType
+  
+    inquirer.prompt([
+      {
+        type: "list",
+        name: "employeeType",
+        message: "What type of employee would you like to add?",
+        choices: ["Intern", "Engineer", "Manager"],
+      },
+    ]).then((answer) => {
+      employeeType = answer.employeeType;
+    });
+  
+    return employeeType;
+  }
+  
+  const employeeType = await promptEmployeeType()
+  const employeeData;
+  if (employeeType === "Intern") {employeeData = await promptInternData()}
+else if (employeeType === "Engineer") {employeeData = await promptEngineerData()} 
+else if (employeeType === "Manager") {employeeData = await promptManagerData()}
 
 function generateHTML(answers) {}
 

@@ -110,6 +110,7 @@ function promptEmployeeType() {
     });
 }
 
+// Function to prompt user with first question, and logic to determine what set of questions to follow up with
 let employeeType = promptEmployeeType();
 let employeeData;
 if (employeeType === "Intern") {

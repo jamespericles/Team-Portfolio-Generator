@@ -7,6 +7,7 @@ const fs = require("fs");
 
 const writeFileAsync = util.promisify(fs.writeFile);
 
+// Array of questions related to an intern
 async function promptInternData() {
     inquirer.prompt([
         {
@@ -32,6 +33,7 @@ async function promptInternData() {
     ])
 }
 
+// Array of questions related to an engineer
 async function promptEngineerData() {
     inquirer.prompt([
         {
@@ -57,6 +59,7 @@ async function promptEngineerData() {
     ])
 }
 
+// Array of questions related to a manager
 async function promptManagerData() {
     inquirer.prompt([
         {
@@ -79,6 +82,7 @@ async function promptManagerData() {
     ])
 }
 
+// First question to determine what branch to follow 
 async function promptEmployeeType() {
     const employeeType
   

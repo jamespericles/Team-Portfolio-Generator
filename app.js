@@ -12,22 +12,47 @@ async function promptInternData() {
         {
             type: "input",
             name: "name",
-            message: "What is the name of the intern?",
+            message: "What is the intern's name?",
         },
         {
             type: "input",
             name: "ID",
-            message: "What is the ID of the intern?",
+            message: "What is the intern's ID?",
         },
         {
             type: "input",
             name: "email",
-            message: "What is the email of the intern?",
+            message: "What is the intern's email?",
         },
         {
             type: "input",
             name: "school",
             message: "What school did the intern graduate from?",
+        },
+    ])
+}
+
+async function promptEngineerData() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "name",
+            message: "What is the name of the engineer?",
+        },
+        {
+            type: "input",
+            name: "ID",
+            message: "What is the engineer's ID?",
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "What is the engineer's email?",
+        },
+        {
+            type: "",
+            name: "",
+            message: "What is the engineer's github URL?",
         },
     ])
 }

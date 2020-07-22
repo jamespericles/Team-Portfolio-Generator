@@ -87,10 +87,9 @@ async function promptManagerData() {
 }
 
 // First question to determine what branch to follow
-async function promptEmployeeType() {
+function promptEmployeeType() {
   let employeeType;
-
-  await inquirer
+  inquirer
     .prompt([
       {
         type: "list",
@@ -101,9 +100,14 @@ async function promptEmployeeType() {
     ])
     .then((answer) => {
       employeeType = answer.employeeType;
+      if (employeeType === "Intern") {
+        promptInternData();
+      } else if (employeeType === "Engineer") {
+        promptEngineerData();
+      } else if (employeeType === "Manager") {
+        promptManagerData();
+      }
     });
-
-  return employeeType;
 }
 
 let employeeType = promptEmployeeType();

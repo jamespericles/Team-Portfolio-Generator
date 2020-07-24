@@ -191,17 +191,17 @@ if (employeeType === "Intern") {
   employeeData = promptManagerData();
 }
 
-function generateHTML(answers) {}
+// function generateHTML(answers) {}
 
 // async function init() {
 //   try {
 //     const answers = promptUser();
 
 //     const HTML = generateHTML(answers);
-//     // Rather than writing to the root of the file and overwriting this projects README, user's documents are written to their own folder
+//
 //     await writeFileAsync("./output/team.html", HTML);
 
-//     console.log("Successfully wrote to README.md.");
+//     console.log("Successfully wrote to team.html.");
 //   } catch (err) {
 //     console.log(err);
 //   }

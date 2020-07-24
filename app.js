@@ -4,7 +4,6 @@ const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
-const util = require("util");
 const render = require("./lib/htmlRenderer");
 
 let team = [];
@@ -189,12 +188,12 @@ if (employeeType === "Intern") {
   employeeData = promptManagerData();
 }
 
+const OUTPUT_DIR = path.resolve(__dirname, "output");
+const outputPath = path.join(OUTPUT_DIR, "team.html");
+
 function generateHTML(html) {
   fs.writeFileSync(outputPath, html);
 }
-
-const OUTPUT_DIR = path.resolve(__dirname, "output");
-const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will

@@ -96,7 +96,7 @@ async function promptEngineerData() {
         answers.name,
         answers.ID,
         answers.email,
-        answers.school
+        answers.github
       );
       team.push(engineer);
       continueType = answers.continue;
@@ -144,7 +144,7 @@ async function promptManagerData() {
         answers.name,
         answers.ID,
         answers.email,
-        answers.school
+        answers.officeNumber
       );
       team.push(manager);
       continueType = answers.continue;

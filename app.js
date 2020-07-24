@@ -10,6 +10,7 @@ const render = require("./lib/htmlRenderer");
 const writeFileAsync = util.promisify(fs.writeFile);
 
 let team = [];
+
 // Array of questions related to an intern
 async function promptInternData() {
   let continueType;
@@ -61,28 +62,50 @@ async function promptInternData() {
 
 // Array of questions related to an engineer
 async function promptEngineerData() {
-  await inquirer.prompt([
-    {
-      type: "input",
-      name: "name",
-      message: "What is the name of the engineer?",
-    },
-    {
-      type: "input",
-      name: "ID",
-      message: "What is the engineer's ID?",
-    },
-    {
-      type: "input",
-      name: "email",
-      message: "What is the engineer's email?",
-    },
-    {
-      type: "input",
-      name: "github",
-      message: "What is the engineer's github URL?",
-    },
-  ]);
+  await inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "name",
+        message: "What is the name of the engineer?",
+      },
+      {
+        type: "input",
+        name: "ID",
+        message: "What is the engineer's ID?",
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "What is the engineer's email?",
+      },
+      {
+        type: "input",
+        name: "github",
+        message: "What is the engineer's github URL?",
+      },
+      {
+        type: "list",
+        name: "continue",
+        message: "Would you like to add another employee?",
+        choices: ["Yes", "No"],
+      },
+    ])
+    .then((answers) => {
+      const engineer = new Engineer(
+        answers.name,
+        answers.ID,
+        answers.email,
+        answers.school
+      );
+      team.push(engineer);
+      continueType = answers.continue;
+      if (continueType === "Yes") {
+        promptEmployeeType();
+      } else if (continueType === "No") {
+        render();
+      }
+    });
 }
 
 // Array of questions related to a manager

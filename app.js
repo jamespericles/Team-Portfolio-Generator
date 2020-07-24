@@ -192,6 +192,10 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 function generateHTML(html) {
+  if (fs.existsSync(OUTPUT_DIR)) {
+    console.log("Pathway exists, ready for generation");
+  } else fs.mkdirSync(OUTPUT_DIR);
+
   fs.writeFileSync(outputPath, html);
 }
 

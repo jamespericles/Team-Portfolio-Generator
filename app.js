@@ -191,7 +191,7 @@ if (employeeType === "Intern") {
   employeeData = promptManagerData();
 }
 
-// function generateHTML(answers) {}
+// function generateHTML() {}
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");

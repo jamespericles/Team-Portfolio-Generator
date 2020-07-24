@@ -55,7 +55,7 @@ async function promptInternData() {
       if (continueType === "Yes") {
         promptEmployeeType();
       } else if (continueType === "No") {
-        render();
+        render(team);
       }
     });
 }
@@ -103,7 +103,7 @@ async function promptEngineerData() {
       if (continueType === "Yes") {
         promptEmployeeType();
       } else if (continueType === "No") {
-        render();
+        render(team);
       }
     });
 }
@@ -151,7 +151,7 @@ async function promptManagerData() {
       if (continueType === "Yes") {
         promptEmployeeType();
       } else if (continueType === "No") {
-        render();
+        render(team);
       }
     });
 }

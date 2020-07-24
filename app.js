@@ -7,8 +7,6 @@ const fs = require("fs");
 const util = require("util");
 const render = require("./lib/htmlRenderer");
 
-// const writeFileAsync = util.promisify(fs.writeFile);
-
 let team = [];
 
 // Array of questions related to an intern
@@ -55,7 +53,7 @@ async function promptInternData() {
       if (continueType === "Yes") {
         promptEmployeeType();
       } else if (continueType === "No") {
-        render(team);
+        generateHTML(render(team));
       }
     });
 }
@@ -103,7 +101,7 @@ async function promptEngineerData() {
       if (continueType === "Yes") {
         promptEmployeeType();
       } else if (continueType === "No") {
-        render(team);
+        generateHTML(render(team));
       }
     });
 }
@@ -151,7 +149,7 @@ async function promptManagerData() {
       if (continueType === "Yes") {
         promptEmployeeType();
       } else if (continueType === "No") {
-        render(team);
+        generateHTML(render(team));
       }
     });
 }
@@ -191,12 +189,12 @@ if (employeeType === "Intern") {
   employeeData = promptManagerData();
 }
 
-// function generateHTML() {}
+function generateHTML(html) {
+  fs.writeFileSync(outputPath, html);
+}
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
-
-// render seems to be functioning properly, now need to write to file
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will

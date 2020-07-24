@@ -110,28 +110,50 @@ async function promptEngineerData() {
 
 // Array of questions related to a manager
 async function promptManagerData() {
-  await inquirer.prompt([
-    {
-      type: "input",
-      name: "name",
-      message: "What is the name of the manager?",
-    },
-    {
-      type: "input",
-      name: "ID",
-      message: "What is the manager's ID?",
-    },
-    {
-      type: "input",
-      name: "email",
-      message: "What is the manager's email?",
-    },
-    {
-      type: "input",
-      name: "officeNumber",
-      message: "What is the manager's office number?",
-    },
-  ]);
+  await inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "name",
+        message: "What is the name of the manager?",
+      },
+      {
+        type: "input",
+        name: "ID",
+        message: "What is the manager's ID?",
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "What is the manager's email?",
+      },
+      {
+        type: "input",
+        name: "officeNumber",
+        message: "What is the manager's office number?",
+      },
+      {
+        type: "list",
+        name: "continue",
+        message: "Would you like to add another employee?",
+        choices: ["Yes", "No"],
+      },
+    ])
+    .then((answers) => {
+      const manager = new Manager(
+        answers.name,
+        answers.ID,
+        answers.email,
+        answers.school
+      );
+      team.push(manager);
+      continueType = answers.continue;
+      if (continueType === "Yes") {
+        promptEmployeeType();
+      } else if (continueType === "No") {
+        render();
+      }
+    });
 }
 
 // First question to determine what branch to follow

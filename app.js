@@ -8,6 +8,10 @@ const render = require("./lib/htmlRenderer");
 
 let team = [];
 
+// May be weird, but I view the application as if it looks like the nordic 'Algiz' (ᛉ) rune
+// where promptEmployeeType() is the base, with the three employee types as the three branches to follow
+// Like a road forking with three paths.
+
 // Array of questions related to an intern
 async function promptInternData() {
   let continueType;
@@ -49,6 +53,9 @@ async function promptInternData() {
       );
       team.push(intern);
       continueType = answers.continue;
+      // Lines 53-57 exist in all three employee type 'pathways' the user can take via inquirer
+      // Answering yes will return the user to the beginning of the question line where they can follow a new path
+      // Answering no will call our generateHTML function passing the render and team array in.
       if (continueType === "Yes") {
         promptEmployeeType();
       } else if (continueType === "No") {
@@ -165,6 +172,7 @@ function promptEmployeeType() {
         choices: ["Intern", "Engineer", "Manager"],
       },
     ])
+    // The user is taken to the different inquirer branches based on which employee type they select
     .then((answer) => {
       employeeType = answer.employeeType;
       if (employeeType === "Intern") {
@@ -188,6 +196,8 @@ if (employeeType === "Intern") {
   employeeData = promptManagerData();
 }
 
+// OUTPUT_DIR is used to create a directory called output relative to the location of this file
+// outputPath is used to generate the file itself
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 

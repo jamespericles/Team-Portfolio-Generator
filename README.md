@@ -36,6 +36,7 @@ Things to note :
 ##### 1. The `output` directory does not need to be created prior to running app.js within node 
 ##### 2. Similarly, `team.html` does not need to be created prior to running app.js 
 ##### 3. If a `team.html` file is in the output directory prior to running app.js, it will be overwritten
+##### 4. Any question can be skipped by pressing `enter` or `return` if so desired
 
 ### <a name="Screenshots"></a>Screenshots
 

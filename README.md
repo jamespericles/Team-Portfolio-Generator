@@ -32,7 +32,10 @@ This application is created with the workplace in mind. It creates a HTML docume
 
 When all dependencies have been installed, the user is able to run app.js in their terminal using node. Doing so will prompt them first with the type of employee to be added first. The user will then be asked a series of questions specific to the type of employee they first specified. At the end of that line of questioning, the user can opt to either add another employee or to finish, which will then generate the `team.html` file.
 
-Things to note : 1. The `output` directory does not need to be created prior to running app.js within node 2. Similarly, `team.html` does not need to be created prior to running app.js 3. If a `team.html` file is in the output directory prior to running app.js, it will be overwritten
+Things to note : 
+##### 1. The `output` directory does not need to be created prior to running app.js within node 
+##### 2. Similarly, `team.html` does not need to be created prior to running app.js 
+##### 3. If a `team.html` file is in the output directory prior to running app.js, it will be overwritten
 
 ### <a name="Screenshots"></a>Screenshots
 

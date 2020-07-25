@@ -28,7 +28,11 @@
 
 ### <a name="Description"></a>Description
 
-This application is created with the workplace in mind. It creates various HTML documents based on user input from the command line using inquirer. Besides this, the code is written in such a way that it can be easily tested using Jest, allowing for it be incremented on easily.
+This application is created with the workplace in mind. It creates a HTML document based on user input from the command line using inquirer. Besides this, the code is written in such a way that it can be easily tested using Jest, allowing for it be incremented on easily.
+
+When all dependencies have been installed, the user is able to run app.js in their terminal using node. Doing so will prompt them first with the type of employee to be added first. The user will then be asked a series of questions specific to the type of employee they first specified. At the end of that line of questioning, the user can opt to either add another employee or to finish, which will then generate the `team.html` file.
+
+Things to note : 1. The `output` directory does not need to be created prior to running app.js within node 2. Similarly, `team.html` does not need to be created prior to running app.js 3. If a `team.html` file is in the output directory prior to running app.js, it will be overwritten
 
 ### <a name="Screenshots"></a>Screenshots
 
@@ -36,7 +40,7 @@ To be updated
 
 ### <a name="Installation"></a>Installation
 
-Upon downloading the repository to your local machine, run ```npm i``` from your console to install the necessary dependencies. Afterwards, running app.js using node will prompt you with questions related to generating your team. 
+Upon downloading the repository to your local machine, run `npm i` from your console to install the necessary dependencies. Afterwards, `node app.js` will begin the application. Once finished with adding each employee, selecting `no` when being asked to continue will create a directory called `output` and a file `team.html` with all of the inputs you gave.
 
 ### <a name="Usage"></a>Usage
 
@@ -47,17 +51,17 @@ This application is designed to help managers keep track of an ever growing team
 MIT License
 
 Copyright (c) 2020 James Pericles
-  
+
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
-  
+
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
-  
+
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -68,11 +72,11 @@ SOFTWARE.
 
 ### <a name="Contributing"></a>Contributing
 
-To be updated
+Per the license, anyone is able to iterate on this project. My contact information is below if you have any questions regarding contributing, the license, or the project itself.
 
 ### <a name="Tests"></a>Tests
 
-Testing was completed using Jest. The only tests ran were to ensure that the classes created were formatted properly. 
+Testing was completed using Jest. The only tests ran were to ensure that the classes created were formatted properly.
 
 ### <a name="Questions"></a>Questions
 

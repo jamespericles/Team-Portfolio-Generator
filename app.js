@@ -13,6 +13,14 @@ let team = [];
 // Like a road forking with three paths.
 
 // Array of questions related to an intern
+
+const validatePhoneNumber = async (input) => {
+  if (isNaN(input) == true) {
+    return "Please input a number without hyphens or parentheses";
+  }
+  return true;
+};
+
 async function promptInternData() {
   let continueType;
   await inquirer
@@ -135,6 +143,7 @@ async function promptManagerData() {
         type: "input",
         name: "officeNumber",
         message: "What is the manager's office number?",
+        validate: validatePhoneNumber,
       },
       {
         type: "list",

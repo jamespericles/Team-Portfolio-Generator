@@ -12,8 +12,7 @@ let team = [];
 // where promptEmployeeType() is the base, with the three employee types as the three branches to follow
 // Like a road forking with three paths.
 
-// Array of questions related to an intern
-
+// Function to validate for phone numbers
 const validatePhoneNumber = async (input) => {
   if (isNaN(input) == true) {
     return "Please input a number without hyphens or parentheses";
@@ -21,6 +20,7 @@ const validatePhoneNumber = async (input) => {
   return true;
 };
 
+// Array of questions related to an intern
 async function promptInternData() {
   let continueType;
   await inquirer

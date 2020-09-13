@@ -92,7 +92,7 @@ Testing was completed using Jest. The only tests ran were to ensure that the cla
 
 ### <a name="Questions"></a>Questions
 
-I can be contacted at james.pericles@aol.com with any questions regarding this project.
+I can be contacted at jamesspericles@gmail.com with any questions regarding this project.
 
 ### <a name="Github"></a>Github
 

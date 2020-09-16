@@ -44,9 +44,9 @@ Things to note :
 
 ### <a name="Screenshots"></a>Screenshots
 
-https://github.com/jamespericles/Team-Portfolio-Generator/blob/master/Screenshots/QuestionsAsked.png
+![Questions_Asked](https://github.com/jamespericles/Team-Portfolio-Generator/blob/master/Screenshots/QuestionsAsked.png)
 
-https://github.com/jamespericles/Team-Portfolio-Generator/blob/master/Screenshots/FamilyBusiness.png
+![Family_Business](https://github.com/jamespericles/Team-Portfolio-Generator/blob/master/Screenshots/FamilyBusiness.png)
 
 ##### For a live demo, check out a short clip <a href="https://youtu.be/dgkbagI9SHY">here</a>
 
